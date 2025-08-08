@@ -4,7 +4,7 @@ import { Upload, FileText } from "lucide-react";
 
 const UploadSection = () => {
   return (
-    <section className="py-20 px-6 sm:px-12 text-center text-white bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+    <section id="upload" className="py-20 px-6 sm:px-12 text-center text-white bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
       {/* Heading */}
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
         Ready to <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">Analyze</span> Your Resume?
