@@ -8,7 +8,7 @@ const gradientTextClass =
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative bg-gradient-to-b from-[#0f0f0f] to-[#1a1a1a] text-white py-36 px-6 sm:px-12 text-center overflow-hidden">
+    <section id="hero" className="min-h-screen relative bg-gradient-to-b from-[#0f0f0f] to-[#1a1a1a] text-white py-36 px-6 sm:px-12 text-center overflow-hidden">
       {/* Gradient Moon Background */}
       <div className="absolute top-[-100px] left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-orange-500 to-yellow-300 opacity-10 blur-3xl z-0" />
 
@@ -49,6 +49,9 @@ const Hero = () => {
       <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 px-20 relative z-10">
         {/* Upload Resume Button */}
         <button
+        onClick={() => {
+          document.getElementById('upload')?.scrollIntoView({behavior:'smooth'});
+        }}
           className="bg-gradient-to-r from-orange-400 to-yellow-300 text-black px-6 py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
         >
           <UploadCloud size={20} /> Upload Resume Now
@@ -56,6 +59,9 @@ const Hero = () => {
 
         {/* View Sample Button */}
         <button
+          onClick={() => {
+            document.getElementById('how-it-works')?.scrollIntoView({behavior:'smooth'})
+          }}
           className="border border-gray-500 text-white px-6 py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-white hover:text-black hover:border-white hover:scale-105"
         >
           <FileSearch size={20} /> View Sample Analysis
