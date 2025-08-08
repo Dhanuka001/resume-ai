@@ -1,9 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Brain, Target, Zap, Shield, BarChart3, BadgeCheck } from 'lucide-react';
 
-const headingGradient = 'bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent';
+const headingGradient =
+  'bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent';
 
 const features = [
   {
@@ -33,12 +34,12 @@ const features = [
   },
   {
     title: 'Industry Standards',
-    desc: 'Analysis based on current hiring trends and industry‑specific requirements.',
+    desc: 'Analysis based on current hiring trends and industry-specific requirements.',
     Icon: BadgeCheck,
   },
 ];
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -46,22 +47,33 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.98 },
-  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1], // cubic-bezier instead of string
+    },
+  },
 };
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-20 px-6 sm:px-12 text-white bg-gradient-to-b from-[#0b0b0b] to-[#141414]">
+    <section
+      id="features"
+      className="py-20 px-6 sm:px-12 text-white bg-gradient-to-b from-[#0b0b0b] to-[#141414]"
+    >
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">
           Powerful <span className={headingGradient}>AI Features</span>
         </h2>
         <p className="text-gray-300">
-          Our comprehensive suite of AI tools provides deep insights into your resume,
-          helping you stand out in today\'s competitive job market.
+          Our comprehensive suite of AI tools provides deep insights into your
+          resume, helping you stand out in today&apos;s competitive job market.
         </p>
       </div>
 
@@ -70,14 +82,17 @@ const FeaturesSection = () => {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: false, amount: 0.2 }} // animate every time visible
         className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-6xl mx-auto"
       >
-        {features.map(({ title, desc, Icon }, i) => (
+        {features.map(({ title, desc, Icon }) => (
           <motion.div
             key={title}
             variants={item}
-            whileHover={{ y: -6, boxShadow: '0 10px 30px rgba(0,0,0,0.25)' }}
+            whileHover={{
+              y: -6,
+              boxShadow: '0 10px 30px rgba(0,0,0,0.25)',
+            }}
             className="rounded-2xl bg-[#121212] border border-[#242424] p-6 md:p-7 h-full"
           >
             <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r from-orange-500 to-yellow-400">
