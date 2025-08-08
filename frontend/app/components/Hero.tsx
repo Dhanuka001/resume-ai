@@ -8,7 +8,7 @@ const gradientTextClass =
 
 const Hero = () => {
   return (
-    <section className="min-h-screen relative bg-gradient-to-b from-[#0f0f0f] to-[#1a1a1a] text-white py-20 px-6 sm:px-12 text-center overflow-hidden">
+    <section className="min-h-screen relative bg-gradient-to-b from-[#0f0f0f] to-[#1a1a1a] text-white py-36 px-6 sm:px-12 text-center overflow-hidden">
       {/* Gradient Moon Background */}
       <div className="absolute top-[-100px] left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-orange-500 to-yellow-300 opacity-10 blur-3xl z-0" />
 
@@ -46,19 +46,25 @@ const Hero = () => {
       </p>
 
       {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 relative z-10">
+      <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16 px-20 relative z-10">
+        {/* Upload Resume Button */}
         <button
-          className={`bg-gradient-to-r from-orange-400 to-yellow-300 text-black px-6 py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition hover:opacity-90`}
+          className="bg-gradient-to-r from-orange-400 to-yellow-300 text-black px-6 py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
         >
           <UploadCloud size={20} /> Upload Resume Now
         </button>
-        <button className="border border-gray-500 hover:border-gray-400 text-white px-6 py-3 rounded-lg text-lg flex items-center justify-center gap-2 transition">
+
+        {/* View Sample Button */}
+        <button
+          className="border border-gray-500 text-white px-6 py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-white hover:text-black hover:border-white hover:scale-105"
+        >
           <FileSearch size={20} /> View Sample Analysis
         </button>
       </div>
 
+
       {/* Stats */}
-      <div className="flex justify-center gap-32 text-center text-white relative z-10">
+      <div className="flex justify-center gap-4 sm:gap-30 text-center text-white relative z-10">
         <div>
           <p className={`text-4xl font-bold ${gradientTextClass}`}>50K+</p>
           <p className="text-sm text-gray-300 font-semibold">Resumes Analyzed</p>
