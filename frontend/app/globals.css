@@ -36,3 +36,28 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+/* Thin scrollbar for all browsers */
+html {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #f97316 #1a1a1a; /* Firefox: thumb & track */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px; /* Thin width */
+  height: 6px; /* Horizontal scrollbar height */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316; /* Thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fb923c; /* Hover color */
+}
